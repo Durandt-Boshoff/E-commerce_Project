@@ -1,6 +1,7 @@
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import CartSummary from "../components/CartSummary";
+import ProductList from "../components/ProductList";
 
 function Home() {
   return (
@@ -12,11 +13,17 @@ function Home() {
 
       {/* Main content */}
       <section className="flex-1 px-[32px]">
-        <Navbar />
-        <div>
-
+        <div className="w-full">
+            {/* Navbar */}
+            <div className="flex justify-center">
+                <Navbar />
+            </div>
+            {/* Products */}
+            <div className="mt-[32px]">
+                <ProductList />
+            </div>
         </div>
-      </section>
+    </section>
 
       {/* The vertical divider line*/}
       <div className="hidden md:block w-[2px] self-stretch bg-[#1A1F1680] rounded-sm" />

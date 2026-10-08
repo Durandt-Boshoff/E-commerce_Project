@@ -1,11 +1,11 @@
 function Navbar() {
   return (
-    <nav className="w-full">
+    <nav className="w-full max-w-[507px]">
       <h1 className="text-[16px] font-semibold text-[#333333] mb-[8px]">
         Search item
       </h1>
 
-      <div className="bg-white w-full max-w-[507px] h-[56px] rounded-lg flex items-center py-[8px] px-[16px] shadow-lg">
+      <div className="bg-white w-full h-[56px] rounded-lg flex items-center py-[8px] px-[16px] shadow-lg">
         <input
           type="text"
           placeholder="Apple Watch, Samsung S21, Macbook Pro, ..."
