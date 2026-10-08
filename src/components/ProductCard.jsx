@@ -1,7 +1,7 @@
 function ProductCard({ name, subtitle, price, image, onAdd }) {
   return (
     <div className="flex flex-col gap-1">
-      <div className="flex h-40 items-center justify-center rounded-2xl bg-white p-4">
+      <div className="flex aspect-square items-center justify-center rounded-2xl bg-white p-4">
         <img src={image} alt={name} className="h-full object-contain" />
       </div>
       <h3 className="mt-2 text-sm font-semibold">{name}</h3>
