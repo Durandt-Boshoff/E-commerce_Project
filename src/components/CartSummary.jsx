@@ -1,3 +1,5 @@
+import BagIcon from './icons/BagIcon'
+
 function CartSummary({ items = [], onViewBag }) {
   return (
     <aside className="flex w-48 shrink-0 flex-col items-center gap-4 border-l-2 border-neutral-700 pl-4">
@@ -20,8 +22,9 @@ function CartSummary({ items = [], onViewBag }) {
 
       <button
         onClick={onViewBag}
-        className="rounded-lg bg-neutral-900 px-4 py-1.5 text-xs font-semibold text-white"
+        className="flex items-center gap-1.5 rounded-lg bg-[#1A1F16] px-4 py-1.5 text-xs font-semibold text-white"
       >
+        <BagIcon className="h-3.5 w-3.5" />
         View Bag
       </button>
     </aside>

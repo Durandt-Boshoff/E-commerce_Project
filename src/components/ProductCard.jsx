@@ -1,3 +1,5 @@
+import BagIcon from './icons/BagIcon'
+
 function ProductCard({ name, subtitle, price, image, onAdd }) {
   return (
     <div className="flex flex-col gap-1">
@@ -11,9 +13,9 @@ function ProductCard({ name, subtitle, price, image, onAdd }) {
         <button
           onClick={onAdd}
           aria-label={`Add ${name} to bag`}
-          className="flex h-6 w-6 items-center justify-center rounded-md bg-neutral-900 text-white"
+          className="flex h-6 w-6 items-center justify-center rounded-md bg-[#1A1F16] text-white"
         >
-          +
+          <BagIcon className="h-3.5 w-3.5" />
         </button>
       </div>
     </div>
