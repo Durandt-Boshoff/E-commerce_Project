@@ -16,7 +16,7 @@ export function validatePayment(v) {
   }
   const match = /^(0[1-9]|1[0-2])\s*\/\s*(\d{2}|\d{4})$/.exec(v.expiry.trim())
   if (!match) {
-    errors.expiry = 'Use MM/YY'
+    errors.expiry = 'Use MM / YYYY'
   } else {
     const year = match[2].length === 2 ? 2000 + Number(match[2]) : Number(match[2])
     const expires = new Date(year, Number(match[1]), 1)
