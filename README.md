@@ -4,26 +4,40 @@ We built a pixel-perfect e-commerce frontend from the Melsoft Academy Figma desi
 
 Figma: E-Commerce Store - Melsoft Academy
 
-## Pages & Routes
+## Features
 
-- / - Home - product grid, sidebar, search, cart overview
-- /product/:id - Product Detail
-- /cart - Cart - view items, change qty, remove
-- /checkout - Checkout - shipping, payment, Order Summary
-- /order-success - Order Successful
+- Responsive Home page
+- Product search and filtering
+- Reusable ProductCard and ProductList components
+- Product detail page
+- Redux-powered shopping cart
+- Cart persistence with localStorage
+- Checkout forms with validation
+- Order summary
+- Order success page
+- Responsive mobile navigation
 
-## Team Members & Roles
+## Tech Stack
 
-**A - Durandt Boshoff - Setup, Router & Cart Logic**
+- React
+- Tailwind CSS
+- React Router
+- Redux Toolkit
+- Vite
+
+
+## Team Contributions
+
+### A - Durandt Boshoff - Setup, Router & Cart Logic**
 Set up the whole project. Created React app, installed Tailwind, react-router-dom and Redux Toolkit. Made the folder structure, App.jsx router, Navbar and Footer. Built cartSlice with addItem, removeItem, increaseQty, decreaseQty, clearCart, plus selectors and localStorage so cart stays after refresh. Also did the Cart page.
 
-**B - Lusizo - Home Page**
-Built the Home page fully responsive. Did ProductList, ProductCard, toggle Menu Sidebar, search that filters locally, and CartSummary widget.
+### B - Lusizo - Home Page**
+I developed the Home page layout, including the responsive Sidebar, Navbar/search area, reusable ProductCard and ProductList components, and Cart/Bag summary. I implemented product search and filtering, including a message when no matching product is found. I also added responsive behavior for smaller screens, including a mobile menu icon and toggle functionality, and ensured the product grid adapts across screen sizes.
 
-**C - Neo - Checkout**
+### C - Neo - Checkout**
 Built Checkout. Made CheckoutForm with shipping and payment sections, form validation, and Order Summary that calculates totals from cart.
 
-**D - Ntombifuthi - Product Data, Product Detail, Order Success & README**
+### D - Ntombifuthi - Product Data, Product Detail, Order Success & README**
 This was my task on feature/product-page branch.
 
 - Created src/data/products.js with 10 products from Figma. Each has id, name, variant, price, rating, category, description, details, image. Also added getProductById helper.
@@ -34,18 +48,22 @@ This was my task on feature/product-page branch.
 - Built src/pages/OrderSuccess.jsx - confirmation after placing order. Figma doesn't have this screen so we designed it in same style.
 - Product images are in public/assets.
 
-## Tech Stack
-- React (functional components, hooks)
-- Tailwind CSS
-- react-router-dom
-- Redux Toolkit
-- Git / GitHub
+
+## Pages & Routes
+
+- / - Home - product grid, sidebar, search, cart overview
+- /product/:id - Product Detail
+- /cart - Cart - view items, change qty, remove
+- /checkout - Checkout - shipping, payment, Order Summary
+- /order-success - Order Successful
+
 
 ## How We Managed State
 - useState for small UI things like sidebar open/close, search input, form inputs
 - Redux for global cart
 - Totals derived with selectors / useMemo
 - Cart saved to localStorage
+
 
 ## Folder Structure
 src/
@@ -61,3 +79,4 @@ public/assets/
 - Search filters locally only
 - Descriptions are placeholder text as per Figma
 - Order Success is our own design since Figma didn't include it
+
