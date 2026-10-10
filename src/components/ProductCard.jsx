@@ -10,7 +10,7 @@ function ProductCard({ product }) {
         {/* The products information */}
         <div className="mt-[12px]">
           <h2 className="text-[16px] font-medium text-[#1A1F16]">{product.name}</h2>
-          <p className="text-[14px] text-[#1A1F1680]"> {product.subtitle}</p>
+          <p className="text-[14px] text-[#1A1F1680]"> {product.variant}</p>
           <div className="mt-[12px] flex items-center justify-between">
             <p className="text-[16px] font-medium text-[#1A1F16]">${product.price.toFixed(2)}</p>
             <button className="w-[32px] h-[32px] rounded-lg bg-[#1A1F16] flex items-center justify-center">

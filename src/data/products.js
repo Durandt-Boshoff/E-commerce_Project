@@ -11,7 +11,7 @@ const products = [
     {
         id: "p1",
         name: "Apple Watch",
-        subtitle: "Series 5 SE",
+        variant: "Series 5 SE",
         price: 299.99,
         category: "Phones",
         description: "Long description...",
@@ -20,7 +20,7 @@ const products = [
     {
         id: "p2",
         name: "Sony Headphones",
-        subtitle: "Wireless Over-Ear",
+        variant: "Wireless Over-Ear",
         price: 199.99,
         category: "Audio",
         description: "Long description...",
@@ -29,7 +29,7 @@ const products = [
     {
         id: "p3",
         name: "iPhone 11 Black",
-        subtitle: "128GB Storage",
+        variant: "128GB Storage",
         price: 699.99,
         category: "Phones",
         description: "Long description...",
@@ -38,7 +38,7 @@ const products = [
     {
         id: "p4",
         name: "iPhone 11 Blue",
-        subtitle: "128GB Storage",
+        variant: "128GB Storage",
         price: 699.99,
         category: "Phones",
         description: "Long description...",
@@ -47,7 +47,7 @@ const products = [
     {
         id: "p5",
         name: "iPhone 11 Red",
-        subtitle: "128GB Storage",
+        variant: "128GB Storage",
         price: 699.99,
         category: "Phones",
         description: "Long description...",
@@ -56,7 +56,7 @@ const products = [
     {
         id: "p6",
         name: "iPhone 11 White",
-        subtitle: "128GB Storage",
+        variant: "128GB Storage",
         price: 699.99,
         category: "Phones",
         description: "Long description...",
@@ -65,7 +65,7 @@ const products = [
     {
         id: "p7",
         name: "iPhone 13",
-        subtitle: "256GB Storage",
+        variant: "256GB Storage",
         price: 899.99,
         category: "Phones",
         description: "Long description...",
@@ -74,7 +74,7 @@ const products = [
     {
         id: "p8",
         name: "iPhone 14",
-        subtitle: "512GB Storage",
+        variant: "512GB Storage",
         price: 999.99,
         category: "Phones",
         description: "Long description...",
