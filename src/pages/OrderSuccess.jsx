@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-// Figma didn't have this screen so I just made a simple one
-// trying to match the rest of the design
 export default function OrderSuccess() {
   return (
     <main className="flex min-h-[70vh] items-center justify-center px-6">
