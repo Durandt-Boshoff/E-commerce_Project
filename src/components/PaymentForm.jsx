@@ -45,7 +45,7 @@ function PaymentForm({ onSubmit, onBack }) {
       <div className="mb-3 grid grid-cols-2 gap-3">
         <div>
           <label htmlFor="expiry" className="mb-1 block text-xs text-gray-500">Expiry Date</label>
-          <input id="expiry" name="expiry" placeholder="MM/YY" value={values.expiry} onChange={handleChange} className={inputClass} />
+          <input id="expiry" name="expiry" placeholder="MM / YYYY" value={values.expiry} onChange={handleChange} className={inputClass} />
           {errors.expiry && <p className="mt-1 text-xs text-[#E5252C]">{errors.expiry}</p>}
         </div>
         <div>
