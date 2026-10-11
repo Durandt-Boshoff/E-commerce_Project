@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import AddressForm from '../components/AddressForm'
 import PaymentForm from '../components/PaymentForm'
 import OrderSummary from '../components/OrderSummary'
@@ -96,7 +97,9 @@ function Checkout() {
 
         <div className="flex flex-col items-start gap-3">
           <OrderSummary itemsTotal={itemsTotal} onPlaceOrder={() => alert('Order placed!')} />
-          <button className="rounded-md border border-[#1A1F16] px-3 py-1 text-xs">&lt; Back</button>
+          <Link to="/cart">
+            <button className="rounded-md border border-[#1A1F16] px-3 py-1 text-xs">&lt; Back</button>
+          </Link>
         </div>
       </div>
     </div>
