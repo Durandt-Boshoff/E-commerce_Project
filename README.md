@@ -35,7 +35,7 @@ Set up the whole project. Created React app, installed Tailwind, react-router-do
 I developed the Home page layout, including the responsive Sidebar, Navbar/search area, reusable ProductCard and ProductList components, and Cart/Bag summary. I implemented product search and filtering, including a message when no matching product is found. I also added responsive behavior for smaller screens, including a mobile menu icon and toggle functionality, and ensured the product grid adapts across screen sizes.
 
 ### C - Neo - Checkout**
-Built Checkout. Made CheckoutForm with shipping and payment sections, form validation, and Order Summary that calculates totals from cart.
+I built the checkout flow: an AddressForm and a PaymentForm with validation (validators.js checks the name and address fields, a 16-digit card number, an expiry date that is not in the past, and a 3-digit CVC), an OrderSummary card that calculates items, shipping, estimated GST and the order total from the cart, and the Checkout page that brings them together. The page reads the bag from the Redux cart, lets the user change the shipping address and payment method, and "Place your order" clears the cart and goes to the Order Success page. Only the last 4 digits of the card are kept; the full card number and CVC are never stored.
 
 ### D - Ntombifuthi - Product Data, Product Detail, Order Success & README**
 This was my task on feature/product-page branch.
