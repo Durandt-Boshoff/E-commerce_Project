@@ -19,6 +19,7 @@ export const products = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim odio faucibus nec malesuada.',
   },
+  
   {
     id: 'p2',
     name: 'Sony ZX330BT',
