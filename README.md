@@ -25,7 +25,15 @@ Figma: E-Commerce Store - Melsoft Academy
 - Redux Toolkit
 - Vite
 
+## How to Run
 
+1. Clone the repo: `git clone https://github.com/Durandt-Boshoff/E-commerce_Project.git`
+2. Go into the folder: `cd E-commerce_Project`
+3. Install the packages: `npm install`
+4. Start the app: `npm run dev`
+5. Open the link shown in the terminal (usually http://localhost:5173)
+
+   
 ## Team Contributions
 
 ### A - Durandt Boshoff - Setup, Router & Cart Logic**
@@ -75,6 +83,8 @@ public/assets/
 
 ## Known Issues / Notes
 - No backend, payment is just dummy validation
+- Checkout: the Order Total follows the Figma and does not include the shipping fee
+- Checkout: the saved address and payment method reset when the page is refreshed (only the cart is saved)
 - Mobile responsiveness still being polished
 - Search filters locally only
 - Descriptions are placeholder text as per Figma
