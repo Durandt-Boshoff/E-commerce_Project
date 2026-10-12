@@ -1,19 +1,20 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import AddressForm from '../components/AddressForm'
 import PaymentForm from '../components/PaymentForm'
 import OrderSummary from '../components/OrderSummary'
-
-// Temporary bag until the real cart is connected
-const sampleItems = [
-  { id: 'p9', name: 'Dell XPS 13', subtitle: 'White', price: 1799.99, quantity: 1 },
-  { id: 'p3', name: 'Iphone 11', subtitle: 'Serious Black', price: 619.99, quantity: 2 },
-]
+import {selectCartItems, selectCartTotalPrice, increaseQty, decreaseQty, clearCart,} from '../redux/cartSlice'
 
 const money = (n) => `$ ${n.toFixed(2)}`
 
 function Checkout() {
-  const [view, setView] = useState('summary') // 'summary' | 'address' | 'payment'
+  const dispatch = useDispatch()
+  const items = useSelector(selectCartItems)
+  const itemsTotal = useSelector(selectCartTotalPrice)
+
+  const [view, setView] = useState('summary')
+
   const [address, setAddress] = useState({
     shippingName: 'John Maker',
     street: '123 Plae Grond Stret',
@@ -21,10 +22,8 @@ function Checkout() {
     state: 'California',
     country: 'United States of America',
   })
-  const [payment, setPayment] = useState({ brand: 'Mastercard', last4: '1252' })
 
-  const items = sampleItems
-  const itemsTotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const [payment, setPayment] = useState({brand: 'Mastercard', last4: '1252',})
 
   const saveAddress = (values) => {
     setAddress(values)
@@ -53,6 +52,14 @@ function Checkout() {
       </div>
     )
   }
+
+  const handlePlaceOrder = () => {
+    alert("Order placed!")
+    dispatch(clearCart())
+    navigate("/order-success")
+}
+
+  const navigate = useNavigate()
 
   const cardClass = 'mb-4 rounded-xl bg-white p-5'
   const headingClass = 'mb-3 text-lg tracking-[0.25em]'
@@ -86,17 +93,55 @@ function Checkout() {
           <section className={cardClass}>
             <h2 className={headingClass}>REVIEW YOUR BAG</h2>
             {items.map((item) => (
-              <div key={item.id} className="border-t border-gray-200 py-3 text-sm first:border-t-0">
-                <p className="text-base">{item.name}</p>
-                <p className="text-xs text-gray-500">{item.subtitle}</p>
-                <p className="mt-1">{money(item.price)} x {item.quantity}</p>
+              <div key={item.id} className="flex items-center gap-5 border-b border-gray-300 py-5 last:border-b-0">
+                <div className="flex h-24 w-24 shrink-0 items-center justify-center">
+                  <img src={item.image} alt={item.name} className="max-h-full max-w-full object-contain"/>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-base font-medium text-[#1A1F16]">{item.name}</h3>
+                  <p className="text-xs text-gray-500">{item.variant}</p>
+                  <p className="mt-1 max-w-md text-[11px] leading-relaxed text-gray-600">{item.description}</p>
+                  <div className="mt-2 flex items-center gap-2 text-xs">
+                    <span className="text-emerald-700">
+                      {"★".repeat(Math.round(item.rating))}
+                      {"☆".repeat(5 - Math.round(item.rating))}
+                    </span>
+                    <span className="text-gray-500">{item.rating}/5</span>
+                  </div>
+                  <div className="mt-3 flex items-center justify-between">
+                    <p className="text-xs text-[#1A1F16]">{money(item.price)} × {item.quantity}</p>
+
+                    {/* Quantity controls */}
+                    <div className="flex items-center gap-4">
+                      <button
+                        onClick={() => dispatch(decreaseQty(item.id))}
+                        className="cursor-pointer text-sm text-red-500"
+                        aria-label="Decrease quantity"
+                      >
+                        -
+                      </button>
+
+                      <span className="text-sm text-[#1A1F16]">
+                        {item.quantity}
+                      </span>
+
+                      <button
+                        onClick={() => dispatch(increaseQty(item.id))}
+                        className="cursor-pointer text-sm text-emerald-500"
+                        aria-label="Increase quantity"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </section>
         </div>
 
         <div className="flex flex-col items-start gap-3">
-          <OrderSummary itemsTotal={itemsTotal} onPlaceOrder={() => alert('Order placed!')} />
+          <OrderSummary itemsTotal={itemsTotal} onPlaceOrder={handlePlaceOrder} />
           <Link to="/cart">
             <button className="rounded-md border border-[#1A1F16] px-3 py-1 text-xs">&lt; Back</button>
           </Link>
@@ -107,3 +152,4 @@ function Checkout() {
 }
 
 export default Checkout
+
